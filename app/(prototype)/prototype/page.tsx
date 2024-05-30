@@ -1,4 +1,5 @@
 "use client";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 // Define the types for the artwork data
@@ -16,6 +17,13 @@ const App: React.FC = () => {
       .then((data) => setItems(data.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const searchParams = useSearchParams();
+  const params = {};
+  for (const [key, value] of searchParams.entries()) {
+    params[key] = value;
+  }
+  console.log("searchParams", params);
 
   const handleClick = (id: number) => {
     console.log("Button clicked:", id);
