@@ -1,7 +1,15 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { LayoutDashboard } from "lucide-react";
+import {
+  Code,
+  ImageIcon,
+  LayoutDashboard,
+  MessageSquare,
+  MusicIcon,
+  Settings,
+  VideoIcon,
+} from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +22,42 @@ const routes = [
     icon: LayoutDashboard,
     href: "/dashboard",
     color: "text-sky-500",
+  },
+  {
+    label: "Conversation",
+    icon: MessageSquare,
+    href: "/message",
+    color: "text-violet-500",
+  },
+  {
+    label: "Image Generation",
+    icon: ImageIcon,
+    href: "/image",
+    color: "text-pink-700",
+  },
+  {
+    label: "Video Generation",
+    icon: VideoIcon,
+    href: "/video",
+    color: "text-orange-700",
+  },
+  {
+    label: "Music Generation",
+    icon: MusicIcon,
+    href: "/music",
+    color: "text-emerald-500",
+  },
+  {
+    label: "Code Generation",
+    icon: Code,
+    href: "/code",
+    color: "text-green-500",
+  },
+  {
+    label: "Settings",
+    icon: Settings,
+    href: "/settings",
+    color: "text-emerald-500",
   },
 ];
 const Sidebar = () => {
