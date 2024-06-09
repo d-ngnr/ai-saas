@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { MessageSquare } from "lucide-react";
 
 const tools = [
@@ -28,7 +29,13 @@ export default function DashboardPage() {
           <Card
             key={tool.href}
             className="p-3 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
-          ></Card>
+          >
+            <div className="flex items-center gap-x-4">
+              <div className={cn("p-2 w-fit rounder-md", tool.bgColor)}>
+                <tool.icon className={cn("w-8 h-8", tool.color)} />
+              </div>
+            </div>
+          </Card>
         ))}
       </div>
     </div>
