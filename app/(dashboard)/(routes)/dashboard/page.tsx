@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 
 const tools = [
   {
@@ -34,6 +34,10 @@ export default function DashboardPage() {
               <div className={cn("p-2 w-fit rounder-md", tool.bgColor)}>
                 <tool.icon className={cn("w-8 h-8", tool.color)} />
               </div>
+              <div className="font-semibold">{tool.label}</div>
+            </div>
+            <div>
+              <ArrowRight className="w-5 h-5" />
             </div>
           </Card>
         ))}
