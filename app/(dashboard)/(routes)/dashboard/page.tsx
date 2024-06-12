@@ -10,6 +10,7 @@ import {
   Music,
   Video,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const tools = [
   {
@@ -49,6 +50,7 @@ const tools = [
   },
 ];
 export default function DashboardPage() {
+  const router = useRouter();
   return (
     <div>
       <div className="mb-8 space-y-4">
@@ -62,6 +64,7 @@ export default function DashboardPage() {
       <div className="px-4 md:px-20 lg:px-32 space-y-4">
         {tools.map((tool) => (
           <Card
+            onClick={() => router.push(tool.href)}
             key={tool.href}
             className="p-3 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
           >
